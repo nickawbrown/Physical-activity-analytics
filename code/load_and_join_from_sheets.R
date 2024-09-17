@@ -51,7 +51,8 @@ full_data <- logs |>
   left_join(pain_sore) |> 
   clean_names() |> 
   relocate(description:rest_per_set_s, .after = name) |> 
-  rename("physical_preparedness" = physical_preparedness_1_10)
+  rename("physical_preparedness" = physical_preparedness_1_10) |> 
+  select(-target_area_s)
 
 
 # Save as .csv file
